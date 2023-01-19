@@ -16,6 +16,7 @@ const postLoginResponseSchema = z.object({
     id: z.string(),
     email: z.string(),
     role_id: z.number(),
+    name: z.string()
   }),
 })
 

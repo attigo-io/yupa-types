@@ -18,14 +18,17 @@ declare const postLoginResponseSchema: z.ZodObject<{
         id: z.ZodString;
         email: z.ZodString;
         role_id: z.ZodNumber;
+        name: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         id: string;
         email: string;
         role_id: number;
+        name: string;
     }, {
         id: string;
         email: string;
         role_id: number;
+        name: string;
     }>;
 }, "strip", z.ZodTypeAny, {
     token: string;
@@ -34,6 +37,7 @@ declare const postLoginResponseSchema: z.ZodObject<{
         id: string;
         email: string;
         role_id: number;
+        name: string;
     };
 }, {
     token: string;
@@ -42,6 +46,7 @@ declare const postLoginResponseSchema: z.ZodObject<{
         id: string;
         email: string;
         role_id: number;
+        name: string;
     };
 }>;
 export type postLoginResponseType = z.infer<typeof postLoginResponseSchema>;
