@@ -42,7 +42,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     webhook: string | null;
     webhook_status: string | null;
 }>;
-declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
+export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
     payments: z.ZodArray<z.ZodObject<{
         checking_id: z.ZodString;
         amount: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodString]>, z.ZodBigInt]>;
@@ -120,7 +120,7 @@ declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
     }[];
 }>;
 export type getYupaApiPaymentsForWaleltResponseType = z.infer<typeof getYupaPaymentsForWaleltResponseSchema>;
-declare const createYupaInvoiceResponseSchema: z.ZodObject<{
+export declare const createYupaInvoiceResponseSchema: z.ZodObject<{
     invoice: z.ZodObject<{
         payment_hash: z.ZodNullable<z.ZodString>;
         payment_request: z.ZodString;
@@ -153,7 +153,7 @@ declare const createYupaInvoiceResponseSchema: z.ZodObject<{
     };
 }>;
 export type createYupaInvoiceResponseType = z.infer<typeof createYupaInvoiceResponseSchema>;
-declare const payYupaInvoiceResponseSchema: z.ZodObject<{
+export declare const payYupaInvoiceResponseSchema: z.ZodObject<{
     invoice: z.ZodObject<{
         payment_hash: z.ZodString;
     }, "strip", z.ZodTypeAny, {
@@ -171,5 +171,37 @@ declare const payYupaInvoiceResponseSchema: z.ZodObject<{
     };
 }>;
 export type payYupaInvoiceResponseType = z.infer<typeof payYupaInvoiceResponseSchema>;
-export {};
+export declare const getYupaInvoiceStatusResponseSchema: z.ZodObject<{
+    status: z.ZodObject<{
+        paid: z.ZodOptional<z.ZodBoolean>;
+        pending: z.ZodOptional<z.ZodBoolean>;
+        failed: z.ZodOptional<z.ZodBoolean>;
+        failureReason: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        pending?: boolean | undefined;
+        paid?: boolean | undefined;
+        failed?: boolean | undefined;
+        failureReason?: string | undefined;
+    }, {
+        pending?: boolean | undefined;
+        paid?: boolean | undefined;
+        failed?: boolean | undefined;
+        failureReason?: string | undefined;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    status: {
+        pending?: boolean | undefined;
+        paid?: boolean | undefined;
+        failed?: boolean | undefined;
+        failureReason?: string | undefined;
+    };
+}, {
+    status: {
+        pending?: boolean | undefined;
+        paid?: boolean | undefined;
+        failed?: boolean | undefined;
+        failureReason?: string | undefined;
+    };
+}>;
+export type getYupaInvoiceStatusResponseType = z.infer<typeof getYupaInvoiceStatusResponseSchema>;
 //# sourceMappingURL=payments.types.d.ts.map

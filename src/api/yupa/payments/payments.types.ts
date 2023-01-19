@@ -16,7 +16,7 @@ export const yupaApiPaymentSchema = z.object({
   webhook_status: z.string().nullable(),
 })
 
-const getYupaPaymentsForWaleltResponseSchema = z.object({
+export const getYupaPaymentsForWaleltResponseSchema = z.object({
   payments: z.array(yupaApiPaymentSchema),
 })
 
@@ -24,7 +24,7 @@ export type getYupaApiPaymentsForWaleltResponseType = z.infer<
   typeof getYupaPaymentsForWaleltResponseSchema
 >
 
-const createYupaInvoiceResponseSchema = z.object({
+export const createYupaInvoiceResponseSchema = z.object({
   invoice: z.object({
     payment_hash: z.string().nullable(),
     payment_request: z.string(),
@@ -37,7 +37,7 @@ export type createYupaInvoiceResponseType = z.infer<
   typeof createYupaInvoiceResponseSchema
 >
 
-const payYupaInvoiceResponseSchema = z.object({
+export const payYupaInvoiceResponseSchema = z.object({
   invoice: z.object({
     payment_hash: z.string(),
   }),
@@ -46,3 +46,15 @@ const payYupaInvoiceResponseSchema = z.object({
 export type payYupaInvoiceResponseType = z.infer<
   typeof payYupaInvoiceResponseSchema
 >
+
+export const getYupaInvoiceStatusResponseSchema = z.object({
+  status: z.object({
+    paid: z.boolean().optional(),
+    pending: z.boolean().optional(),
+    failed: z.boolean().optional(),
+    failureReason: z.string().optional(),
+  }),
+})
+
+
+export type getYupaInvoiceStatusResponseType = z.infer<typeof getYupaInvoiceStatusResponseSchema>
