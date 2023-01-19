@@ -19,4 +19,5 @@ const getWalletsResponseSchema = z.object({
   wallets: z.array(walletSchema),
 })
 
-export type getWalletsType = z.infer<typeof getWalletsResponseSchema>
+export type getWalletsResponseType = z.infer<typeof getWalletsResponseSchema>
+export type getWalletResponseType = z.infer<typeof getWalletResponseSchema>
