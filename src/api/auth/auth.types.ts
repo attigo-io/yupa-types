@@ -48,3 +48,15 @@ const getMeResponseSchema = z.object({
 })
 
 export type getMeResponseType = z.infer<typeof getMeResponseSchema>
+
+const postRegisterResponseSchema = z.object({
+  token: z.string(),
+  user: z.object({
+    id: z.string(),
+    email: z.string().email(),
+    role_id: z.string(),
+    name: z.string()
+  })
+})
+
+export type postRegisterResponseType = z.infer<typeof postRegisterResponseSchema>

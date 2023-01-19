@@ -113,5 +113,41 @@ declare const getMeResponseSchema: z.ZodObject<{
     };
 }>;
 export type getMeResponseType = z.infer<typeof getMeResponseSchema>;
+declare const postRegisterResponseSchema: z.ZodObject<{
+    token: z.ZodString;
+    user: z.ZodObject<{
+        id: z.ZodString;
+        email: z.ZodString;
+        role_id: z.ZodString;
+        name: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        email: string;
+        role_id: string;
+        name: string;
+    }, {
+        id: string;
+        email: string;
+        role_id: string;
+        name: string;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    token: string;
+    user: {
+        id: string;
+        email: string;
+        role_id: string;
+        name: string;
+    };
+}, {
+    token: string;
+    user: {
+        id: string;
+        email: string;
+        role_id: string;
+        name: string;
+    };
+}>;
+export type postRegisterResponseType = z.infer<typeof postRegisterResponseSchema>;
 export {};
 //# sourceMappingURL=auth.types.d.ts.map
