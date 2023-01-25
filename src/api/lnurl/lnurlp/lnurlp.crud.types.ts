@@ -13,6 +13,8 @@ const lnurlPLinkSchema = z.object({
   currency: z.string().nullable(),
   comment_chars: z.number().nullable(),
   max: z.number().nullable(),
+  lnurl: z.string()
+
 });
 
 export type lnurlPLinkType = z.infer<typeof lnurlPLinkSchema>;

@@ -12,6 +12,7 @@ declare const lnurlPLinkSchema: z.ZodObject<{
     currency: z.ZodNullable<z.ZodString>;
     comment_chars: z.ZodNullable<z.ZodNumber>;
     max: z.ZodNullable<z.ZodNumber>;
+    lnurl: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     id: number;
     description: string;
@@ -25,6 +26,7 @@ declare const lnurlPLinkSchema: z.ZodObject<{
     success_url: string | null;
     comment_chars: number | null;
     max: number | null;
+    lnurl: string;
 }, {
     id: number;
     description: string;
@@ -38,6 +40,7 @@ declare const lnurlPLinkSchema: z.ZodObject<{
     success_url: string | null;
     comment_chars: number | null;
     max: number | null;
+    lnurl: string;
 }>;
 export type lnurlPLinkType = z.infer<typeof lnurlPLinkSchema>;
 declare const getLnurlPLinksResponseSchema: z.ZodObject<{
@@ -54,6 +57,7 @@ declare const getLnurlPLinksResponseSchema: z.ZodObject<{
         currency: z.ZodNullable<z.ZodString>;
         comment_chars: z.ZodNullable<z.ZodNumber>;
         max: z.ZodNullable<z.ZodNumber>;
+        lnurl: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         id: number;
         description: string;
@@ -67,6 +71,7 @@ declare const getLnurlPLinksResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     }, {
         id: number;
         description: string;
@@ -80,6 +85,7 @@ declare const getLnurlPLinksResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     links: {
@@ -95,6 +101,7 @@ declare const getLnurlPLinksResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     }[];
 }, {
     links: {
@@ -110,6 +117,7 @@ declare const getLnurlPLinksResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     }[];
 }>;
 export type getLnurlPLinksResponseType = z.infer<typeof getLnurlPLinksResponseSchema>;
@@ -127,6 +135,7 @@ declare const getLnurlPLinkResponseSchema: z.ZodObject<{
         currency: z.ZodNullable<z.ZodString>;
         comment_chars: z.ZodNullable<z.ZodNumber>;
         max: z.ZodNullable<z.ZodNumber>;
+        lnurl: z.ZodString;
     }, "strip", z.ZodTypeAny, {
         id: number;
         description: string;
@@ -140,6 +149,7 @@ declare const getLnurlPLinkResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     }, {
         id: number;
         description: string;
@@ -153,6 +163,7 @@ declare const getLnurlPLinkResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     }>;
 }, "strip", z.ZodTypeAny, {
     link: {
@@ -168,6 +179,7 @@ declare const getLnurlPLinkResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     };
 }, {
     link: {
@@ -183,6 +195,7 @@ declare const getLnurlPLinkResponseSchema: z.ZodObject<{
         success_url: string | null;
         comment_chars: number | null;
         max: number | null;
+        lnurl: string;
     };
 }>;
 export type getLnurlPLinkResponseType = z.infer<typeof getLnurlPLinkResponseSchema>;
