@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 declare const posSchema: z.ZodObject<{
     id: z.ZodString;
     wallet: z.ZodString;
@@ -16,7 +16,7 @@ declare const posSchema: z.ZodObject<{
     currency: string;
 }>;
 export type posType = z.infer<typeof posSchema>;
-declare const getTpossResponseSchema: z.ZodObject<{
+export declare const getTpossResponseSchema: z.ZodObject<{
     poss: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         wallet: z.ZodString;
@@ -49,7 +49,7 @@ declare const getTpossResponseSchema: z.ZodObject<{
     }[];
 }>;
 export type getTpossResponseType = z.infer<typeof getTpossResponseSchema>;
-declare const getTposResponseSchema: z.ZodObject<{
+export declare const getTposResponseSchema: z.ZodObject<{
     pos: z.ZodObject<{
         id: z.ZodString;
         wallet: z.ZodString;
@@ -82,8 +82,40 @@ declare const getTposResponseSchema: z.ZodObject<{
     };
 }>;
 export type getTposResponseType = z.infer<typeof getTposResponseSchema>;
+export declare const createPosResponseSchema: z.ZodObject<{
+    pos: z.ZodObject<{
+        id: z.ZodString;
+        wallet: z.ZodString;
+        name: z.ZodString;
+        currency: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        name: string;
+        wallet: string;
+        currency: string;
+    }, {
+        id: string;
+        name: string;
+        wallet: string;
+        currency: string;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    pos: {
+        id: string;
+        name: string;
+        wallet: string;
+        currency: string;
+    };
+}, {
+    pos: {
+        id: string;
+        name: string;
+        wallet: string;
+        currency: string;
+    };
+}>;
 export type createPosResponseType = getTposResponseType;
-declare const getPosTodayInvoicesSchema: z.ZodObject<{
+export declare const getPosTodayInvoicesSchema: z.ZodObject<{
     payments: z.ZodArray<z.ZodObject<{
         checking_id: z.ZodString;
         amount: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodString]>, z.ZodBigInt]>;
@@ -161,5 +193,28 @@ declare const getPosTodayInvoicesSchema: z.ZodObject<{
     }[];
 }>;
 export type getPosTodayInvoicesType = z.infer<typeof getPosTodayInvoicesSchema>;
+export declare const createPosInvoiceResponseSchema: z.ZodObject<{
+    invoice: z.ZodObject<{
+        payment_hash: z.ZodOptional<z.ZodString>;
+        payment_request: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        payment_hash?: string | undefined;
+        payment_request: string;
+    }, {
+        payment_hash?: string | undefined;
+        payment_request: string;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    invoice: {
+        payment_hash?: string | undefined;
+        payment_request: string;
+    };
+}, {
+    invoice: {
+        payment_hash?: string | undefined;
+        payment_request: string;
+    };
+}>;
+export type createPosInvoiceResponseType = z.infer<typeof createPosInvoiceResponseSchema>;
 export {};
 //# sourceMappingURL=tpos.types.d.ts.map
