@@ -20,6 +20,23 @@ export type DashboardTransaction = {
     webhook: string | null;
     webhook_status: string | null;
 };
+export declare const dashboardPaymentPerWalletSchema: z.ZodObject<{
+    wallet: z.ZodString;
+    latest: z.ZodString;
+    incom: z.ZodNumber;
+    outcom: z.ZodNumber;
+}, "strip", z.ZodTypeAny, {
+    wallet: string;
+    latest: string;
+    incom: number;
+    outcom: number;
+}, {
+    wallet: string;
+    latest: string;
+    incom: number;
+    outcom: number;
+}>;
+export type dashboardPaymentPerWalletType = z.infer<typeof dashboardPaymentPerWalletSchema>;
 declare const getDahboardSchema: z.ZodObject<{
     paymentsPerWallet: z.ZodArray<z.ZodObject<{
         wallet: z.ZodString;

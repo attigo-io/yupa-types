@@ -39,16 +39,20 @@ export type DashboardTransaction = {
   webhook_status: string | null;
 };
 
+export const dashboardPaymentPerWalletSchema = z.object({
+  wallet: z.string(),
+  latest: z.string(),
+  incom: z.number(),
+  outcom: z.number(),
+});
+
+export type dashboardPaymentPerWalletType = z.infer<
+  typeof dashboardPaymentPerWalletSchema
+>;
+
 const getDahboardSchema = z.object({
-  paymentsPerWallet: z.array(
-    z.object({
-      wallet: z.string(),
-      latest: z.string(),
-      incom: z.number(),
-      outcom: z.number(),
-    })
-  ),
+  paymentsPerWallet: z.array(dashboardPaymentPerWalletSchema),
   latestTransactions: z.array(apiPaymentSchema),
 });
 
-export type getResponseDahboardType = z.infer<typeof getDahboardSchema> 
+export type getResponseDahboardType = z.infer<typeof getDahboardSchema>;
