@@ -1,12 +1,16 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-export type DashboardPaymentPerWallet = {
-  wallet: string;
-  latest: string;
-  incom: number;
-  outcom: number;
-  balance: number;
-};
+export type getDahboardPaymentsPerWalletFromDbType = {
+  wallet: string
+  latest: string
+  incom: number
+  outcom: number
+}
+
+export type getDashboardBalancePerWalletFromDbType = {
+  wallet: string
+  balance: number
+}
 
 const apiPaymentSchema = z.object({
   checking_id: z.string(),
@@ -22,38 +26,49 @@ const apiPaymentSchema = z.object({
   extra: z.string().nullable(),
   webhook: z.string().nullable(),
   webhook_status: z.string().nullable(),
-});
+})
 
 export type DashboardTransaction = {
-  checking_id: string;
-  amount: bigint;
-  fee: number;
-  wallet: string;
-  pending: boolean;
-  memo: string | null;
-  time: Date;
-  hash: string | null;
-  preimage: string | null;
-  bolt11: string | null;
-  extra: string | null;
-  webhook: string | null;
-  webhook_status: string | null;
-};
+  checking_id: string
+  amount: bigint
+  fee: number
+  wallet: string
+  pending: boolean
+  memo: string | null
+  time: Date
+  hash: string | null
+  preimage: string | null
+  bolt11: string | null
+  extra: string | null
+  webhook: string | null
+  webhook_status: string | null
+}
 
-export const dashboardPaymentPerWalletSchema = z.object({
+export const allWalletsResumeSchema = z.object({
+  total: z.number(),
+  out: z.number(),
+  in: z.number(),
+})
+
+export type dashboardAllWalletsResumeType = z.infer<
+  typeof allWalletsResumeSchema
+>
+
+export const dashboardPerWalletDataSchema = z.object({
   wallet: z.string(),
   latest: z.string(),
   incom: z.number(),
   outcom: z.number(),
-});
+})
 
-export type dashboardPaymentPerWalletType = z.infer<
-  typeof dashboardPaymentPerWalletSchema
->;
+export type dashboardPerWalletDataType = z.infer<
+  typeof dashboardPerWalletDataSchema
+>
 
 const getDahboardSchema = z.object({
-  paymentsPerWallet: z.array(dashboardPaymentPerWalletSchema),
+  walletsData: z.array(dashboardPerWalletDataSchema),
   latestTransactions: z.array(apiPaymentSchema),
-});
+  allWalletsResume: allWalletsResumeSchema,
+})
 
-export type getResponseDahboardType = z.infer<typeof getDahboardSchema>;
+export type getResponseDahboardType = z.infer<typeof getDahboardSchema>

@@ -1,9 +1,12 @@
-import { z } from "zod";
-export type DashboardPaymentPerWallet = {
+import { z } from 'zod';
+export type getDahboardPaymentsPerWalletFromDbType = {
     wallet: string;
     latest: string;
     incom: number;
     outcom: number;
+};
+export type getDashboardBalancePerWalletFromDbType = {
+    wallet: string;
     balance: number;
 };
 export type DashboardTransaction = {
@@ -21,7 +24,21 @@ export type DashboardTransaction = {
     webhook: string | null;
     webhook_status: string | null;
 };
-export declare const dashboardPaymentPerWalletSchema: z.ZodObject<{
+export declare const allWalletsResumeSchema: z.ZodObject<{
+    total: z.ZodNumber;
+    out: z.ZodNumber;
+    in: z.ZodNumber;
+}, "strip", z.ZodTypeAny, {
+    total: number;
+    out: number;
+    in: number;
+}, {
+    total: number;
+    out: number;
+    in: number;
+}>;
+export type dashboardAllWalletsResumeType = z.infer<typeof allWalletsResumeSchema>;
+export declare const dashboardPerWalletDataSchema: z.ZodObject<{
     wallet: z.ZodString;
     latest: z.ZodString;
     incom: z.ZodNumber;
@@ -37,9 +54,9 @@ export declare const dashboardPaymentPerWalletSchema: z.ZodObject<{
     incom: number;
     outcom: number;
 }>;
-export type dashboardPaymentPerWalletType = z.infer<typeof dashboardPaymentPerWalletSchema>;
+export type dashboardPerWalletDataType = z.infer<typeof dashboardPerWalletDataSchema>;
 declare const getDahboardSchema: z.ZodObject<{
-    paymentsPerWallet: z.ZodArray<z.ZodObject<{
+    walletsData: z.ZodArray<z.ZodObject<{
         wallet: z.ZodString;
         latest: z.ZodString;
         incom: z.ZodNumber;
@@ -98,8 +115,21 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
     }>, "many">;
+    allWalletsResume: z.ZodObject<{
+        total: z.ZodNumber;
+        out: z.ZodNumber;
+        in: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        total: number;
+        out: number;
+        in: number;
+    }, {
+        total: number;
+        out: number;
+        in: number;
+    }>;
 }, "strip", z.ZodTypeAny, {
-    paymentsPerWallet: {
+    walletsData: {
         wallet: string;
         latest: string;
         incom: number;
@@ -120,8 +150,13 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
     }[];
+    allWalletsResume: {
+        total: number;
+        out: number;
+        in: number;
+    };
 }, {
-    paymentsPerWallet: {
+    walletsData: {
         wallet: string;
         latest: string;
         incom: number;
@@ -142,6 +177,11 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
     }[];
+    allWalletsResume: {
+        total: number;
+        out: number;
+        in: number;
+    };
 }>;
 export type getResponseDahboardType = z.infer<typeof getDahboardSchema>;
 export {};
