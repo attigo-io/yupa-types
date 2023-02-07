@@ -4,6 +4,7 @@ export type DashboardPaymentPerWallet = {
     latest: string;
     incom: number;
     outcom: number;
+    balance: number;
 };
 export type DashboardTransaction = {
     checking_id: string;

@@ -5,6 +5,7 @@ export type DashboardPaymentPerWallet = {
   latest: string;
   incom: number;
   outcom: number;
+  balance: number;
 };
 
 const apiPaymentSchema = z.object({

@@ -15,7 +15,7 @@ export const getTpossResponseSchema = z.object({
 })
 
 export type getTpossResponseType = z.infer<typeof getTpossResponseSchema>
-
+ 
 export const getTposResponseSchema = z.object({
   pos: posSchema,
 })
