@@ -50,3 +50,5 @@ const getDahboardSchema = z.object({
   ),
   latestTransactions: z.array(apiPaymentSchema),
 });
+
+export type getResponseDahboardType = z.infer<typeof getDahboardSchema> 
