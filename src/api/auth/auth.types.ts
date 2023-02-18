@@ -23,6 +23,16 @@ const postLoginResponseSchema = z.object({
 
 export type postLoginResponseType = z.infer<typeof postLoginResponseSchema>
 
+export const postRefreshTokenResponseSchema = z.object({
+  token: z.string(),
+  id: z.string(),
+  refreshToken: z.string(),
+})
+
+export type postRefreshTokenResponseType = z.infer<
+  typeof postRefreshTokenResponseSchema
+>
+
 const getMeResponseSchema = z.object({
   user: z.object({
     id: z.string(),

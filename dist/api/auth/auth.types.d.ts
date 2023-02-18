@@ -53,6 +53,20 @@ declare const postLoginResponseSchema: z.ZodObject<{
     };
 }>;
 export type postLoginResponseType = z.infer<typeof postLoginResponseSchema>;
+export declare const postRefreshTokenResponseSchema: z.ZodObject<{
+    token: z.ZodString;
+    id: z.ZodString;
+    refreshToken: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    token: string;
+    id: string;
+    refreshToken: string;
+}, {
+    token: string;
+    id: string;
+    refreshToken: string;
+}>;
+export type postRefreshTokenResponseType = z.infer<typeof postRefreshTokenResponseSchema>;
 declare const getMeResponseSchema: z.ZodObject<{
     user: z.ZodObject<{
         id: z.ZodString;
