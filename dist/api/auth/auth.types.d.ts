@@ -14,6 +14,7 @@ export interface createUserAttigoResponseType {
 declare const postLoginResponseSchema: z.ZodObject<{
     token: z.ZodString;
     id: z.ZodString;
+    refreshToken: z.ZodString;
     user: z.ZodObject<{
         id: z.ZodString;
         email: z.ZodString;
@@ -33,6 +34,7 @@ declare const postLoginResponseSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     token: string;
     id: string;
+    refreshToken: string;
     user: {
         id: string;
         email: string;
@@ -42,6 +44,7 @@ declare const postLoginResponseSchema: z.ZodObject<{
 }, {
     token: string;
     id: string;
+    refreshToken: string;
     user: {
         id: string;
         email: string;
@@ -115,6 +118,7 @@ declare const getMeResponseSchema: z.ZodObject<{
 export type getMeResponseType = z.infer<typeof getMeResponseSchema>;
 declare const postRegisterResponseSchema: z.ZodObject<{
     token: z.ZodString;
+    refreshToken: z.ZodString;
     user: z.ZodObject<{
         id: z.ZodString;
         email: z.ZodString;
@@ -133,6 +137,7 @@ declare const postRegisterResponseSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     token: string;
+    refreshToken: string;
     user: {
         id: string;
         email: string;
@@ -141,6 +146,7 @@ declare const postRegisterResponseSchema: z.ZodObject<{
     };
 }, {
     token: string;
+    refreshToken: string;
     user: {
         id: string;
         email: string;

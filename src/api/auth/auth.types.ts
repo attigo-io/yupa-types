@@ -12,6 +12,7 @@ export interface createUserAttigoResponseType {
 const postLoginResponseSchema = z.object({
   token: z.string(),
   id: z.string(),
+  refreshToken: z.string(),
   user: z.object({
     id: z.string(),
     email: z.string(),
@@ -21,16 +22,6 @@ const postLoginResponseSchema = z.object({
 })
 
 export type postLoginResponseType = z.infer<typeof postLoginResponseSchema>
-
-const postRegisterReponseSchema = z.object({
-  token: z.string(),
-  id: z.string(),
-  user: z.object({
-    id: z.string(),
-    email: z.string(),
-    role_id: z.number(),
-  }),
-})
 
 const getMeResponseSchema = z.object({
   user: z.object({
@@ -51,6 +42,7 @@ export type getMeResponseType = z.infer<typeof getMeResponseSchema>
 
 const postRegisterResponseSchema = z.object({
   token: z.string(),
+  refreshToken: z.string(),
   user: z.object({
     id: z.string(),
     email: z.string().email(),
