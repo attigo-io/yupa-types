@@ -13,6 +13,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     extra: z.ZodNullable<z.ZodString>;
     webhook: z.ZodNullable<z.ZodString>;
     webhook_status: z.ZodNullable<z.ZodString>;
+    tpos_id: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     fee: number;
     checking_id: string;
@@ -27,6 +28,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     extra: string | null;
     webhook: string | null;
     webhook_status: string | null;
+    tpos_id: string | null;
 }, {
     fee: number;
     checking_id: string;
@@ -41,6 +43,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     extra: string | null;
     webhook: string | null;
     webhook_status: string | null;
+    tpos_id: string | null;
 }>;
 export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
     payments: z.ZodArray<z.ZodObject<{
@@ -57,6 +60,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         extra: z.ZodNullable<z.ZodString>;
         webhook: z.ZodNullable<z.ZodString>;
         webhook_status: z.ZodNullable<z.ZodString>;
+        tpos_id: z.ZodNullable<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         fee: number;
         checking_id: string;
@@ -71,6 +75,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        tpos_id: string | null;
     }, {
         fee: number;
         checking_id: string;
@@ -85,6 +90,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        tpos_id: string | null;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     payments: {
@@ -101,6 +107,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        tpos_id: string | null;
     }[];
 }, {
     payments: {
@@ -117,6 +124,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        tpos_id: string | null;
     }[];
 }>;
 export type getYupaApiPaymentsForWaleltResponseType = z.infer<typeof getYupaPaymentsForWaleltResponseSchema>;

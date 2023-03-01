@@ -7,6 +7,7 @@ const walletSchema = z.object({
   adminkey: z.string(),
   inkey: z.string(),
   balance_msat: z.string().or(z.number()).or(z.bigint()),
+  lightning_address: z.string().nullable()
 })
 
 export type walletType = z.infer<typeof walletSchema>

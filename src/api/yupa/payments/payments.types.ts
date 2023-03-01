@@ -14,6 +14,7 @@ export const yupaApiPaymentSchema = z.object({
   extra: z.string().nullable(),
   webhook: z.string().nullable(),
   webhook_status: z.string().nullable(),
+  tpos_id: z.string().nullable()
 })
 
 export const getYupaPaymentsForWaleltResponseSchema = z.object({

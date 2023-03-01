@@ -6,6 +6,7 @@ declare const walletSchema: z.ZodObject<{
     adminkey: z.ZodString;
     inkey: z.ZodString;
     balance_msat: z.ZodUnion<[z.ZodUnion<[z.ZodString, z.ZodNumber]>, z.ZodBigInt]>;
+    lightning_address: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id: string;
     user: string;
@@ -13,6 +14,7 @@ declare const walletSchema: z.ZodObject<{
     adminkey: string;
     inkey: string;
     balance_msat: string | number | bigint;
+    lightning_address: string | null;
 }, {
     id: string;
     user: string;
@@ -20,6 +22,7 @@ declare const walletSchema: z.ZodObject<{
     adminkey: string;
     inkey: string;
     balance_msat: string | number | bigint;
+    lightning_address: string | null;
 }>;
 export type walletType = z.infer<typeof walletSchema>;
 declare const getWalletResponseSchema: z.ZodObject<{
@@ -30,6 +33,7 @@ declare const getWalletResponseSchema: z.ZodObject<{
         adminkey: z.ZodString;
         inkey: z.ZodString;
         balance_msat: z.ZodUnion<[z.ZodUnion<[z.ZodString, z.ZodNumber]>, z.ZodBigInt]>;
+        lightning_address: z.ZodNullable<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id: string;
         user: string;
@@ -37,6 +41,7 @@ declare const getWalletResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     }, {
         id: string;
         user: string;
@@ -44,6 +49,7 @@ declare const getWalletResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     }>;
 }, "strip", z.ZodTypeAny, {
     wallet: {
@@ -53,6 +59,7 @@ declare const getWalletResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     };
 }, {
     wallet: {
@@ -62,6 +69,7 @@ declare const getWalletResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     };
 }>;
 declare const getWalletsResponseSchema: z.ZodObject<{
@@ -72,6 +80,7 @@ declare const getWalletsResponseSchema: z.ZodObject<{
         adminkey: z.ZodString;
         inkey: z.ZodString;
         balance_msat: z.ZodUnion<[z.ZodUnion<[z.ZodString, z.ZodNumber]>, z.ZodBigInt]>;
+        lightning_address: z.ZodNullable<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id: string;
         user: string;
@@ -79,6 +88,7 @@ declare const getWalletsResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     }, {
         id: string;
         user: string;
@@ -86,6 +96,7 @@ declare const getWalletsResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     wallets: {
@@ -95,6 +106,7 @@ declare const getWalletsResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     }[];
 }, {
     wallets: {
@@ -104,6 +116,7 @@ declare const getWalletsResponseSchema: z.ZodObject<{
         adminkey: string;
         inkey: string;
         balance_msat: string | number | bigint;
+        lightning_address: string | null;
     }[];
 }>;
 export type getWalletsResponseType = z.infer<typeof getWalletsResponseSchema>;
