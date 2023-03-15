@@ -21,6 +21,7 @@ export const getNodePaymentsHistoryResponseSchema = z.object({
       date: z.string().or(z.date()),
       fee: z.number(),
       in: z.boolean(),
+      is_paid: z.boolean()
     })
   ),
   meta: z.object({
