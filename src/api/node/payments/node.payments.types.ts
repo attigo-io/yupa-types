@@ -23,6 +23,10 @@ export const getNodePaymentsHistoryResponseSchema = z.object({
       in: z.boolean(),
     })
   ),
+  meta: z.object({
+    invoicesToken: z.string().optional(),
+    paymentsToken: z.string().optional(),
+  })
 })
 
 export type getNodePaymentsHistoryResponseType = z.infer<

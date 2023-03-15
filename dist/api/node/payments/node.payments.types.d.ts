@@ -30,6 +30,16 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
     }>, "many">;
+    meta: z.ZodObject<{
+        invoicesToken: z.ZodOptional<z.ZodString>;
+        paymentsToken: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        invoicesToken?: string | undefined;
+        paymentsToken?: string | undefined;
+    }, {
+        invoicesToken?: string | undefined;
+        paymentsToken?: string | undefined;
+    }>;
 }, "strip", z.ZodTypeAny, {
     history: {
         date: string | Date;
@@ -38,6 +48,10 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
     }[];
+    meta: {
+        invoicesToken?: string | undefined;
+        paymentsToken?: string | undefined;
+    };
 }, {
     history: {
         date: string | Date;
@@ -46,6 +60,10 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
     }[];
+    meta: {
+        invoicesToken?: string | undefined;
+        paymentsToken?: string | undefined;
+    };
 }>;
 export type getNodePaymentsHistoryResponseType = z.infer<typeof getNodePaymentsHistoryResponseSchema>;
 export {};
