@@ -12,3 +12,19 @@ const getNodePaymentsHistorySchema = z.object({
 export type getNodePaymentsHistoryQueryType = z.infer<
   typeof getNodePaymentsHistoryQuerySchema
 >
+
+export const getNodePaymentsHistoryResponseSchema = z.object({
+  history: z.array(
+    z.object({
+      memo: z.string(),
+      amount: z.number(),
+      date: z.string().or(z.date()),
+      fee: z.number(),
+      in: z.boolean(),
+    })
+  ),
+})
+
+export type getNodePaymentsHistoryResponseType = z.infer<
+  typeof getNodePaymentsHistoryResponseSchema
+>
