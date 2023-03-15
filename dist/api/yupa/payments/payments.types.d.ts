@@ -15,12 +15,12 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     webhook_status: z.ZodNullable<z.ZodString>;
     tpos_id: z.ZodNullable<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
+    memo: string | null;
+    amount: string | number | bigint;
     fee: number;
     checking_id: string;
-    amount: string | number | bigint;
     wallet: string;
     pending: boolean;
-    memo: string | null;
     time: string | Date;
     hash: string | null;
     preimage: string | null;
@@ -30,12 +30,12 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     webhook_status: string | null;
     tpos_id: string | null;
 }, {
+    memo: string | null;
+    amount: string | number | bigint;
     fee: number;
     checking_id: string;
-    amount: string | number | bigint;
     wallet: string;
     pending: boolean;
-    memo: string | null;
     time: string | Date;
     hash: string | null;
     preimage: string | null;
@@ -62,12 +62,12 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         webhook_status: z.ZodNullable<z.ZodString>;
         tpos_id: z.ZodNullable<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
+        memo: string | null;
+        amount: string | number | bigint;
         fee: number;
         checking_id: string;
-        amount: string | number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -77,12 +77,12 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         webhook_status: string | null;
         tpos_id: string | null;
     }, {
+        memo: string | null;
+        amount: string | number | bigint;
         fee: number;
         checking_id: string;
-        amount: string | number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -94,12 +94,12 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     payments: {
+        memo: string | null;
+        amount: string | number | bigint;
         fee: number;
         checking_id: string;
-        amount: string | number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -111,12 +111,12 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
     }[];
 }, {
     payments: {
+        memo: string | null;
+        amount: string | number | bigint;
         fee: number;
         checking_id: string;
-        amount: string | number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;

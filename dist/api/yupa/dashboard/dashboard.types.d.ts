@@ -29,13 +29,13 @@ export declare const allWalletsResumeSchema: z.ZodObject<{
     out: z.ZodNumber;
     in: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
+    in: number;
     total: number;
     out: number;
-    in: number;
 }, {
+    in: number;
     total: number;
     out: number;
-    in: number;
 }>;
 export type dashboardAllWalletsResumeType = z.infer<typeof allWalletsResumeSchema>;
 export declare const dashboardPerWalletDataSchema: z.ZodObject<{
@@ -87,12 +87,12 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook: z.ZodNullable<z.ZodString>;
         webhook_status: z.ZodNullable<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
+        memo: string | null;
+        amount: number | bigint;
         fee: number;
         checking_id: string;
-        amount: number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -101,12 +101,12 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
     }, {
+        memo: string | null;
+        amount: number | bigint;
         fee: number;
         checking_id: string;
-        amount: number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -120,13 +120,13 @@ declare const getDahboardSchema: z.ZodObject<{
         out: z.ZodNumber;
         in: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
+        in: number;
         total: number;
         out: number;
-        in: number;
     }, {
+        in: number;
         total: number;
         out: number;
-        in: number;
     }>;
 }, "strip", z.ZodTypeAny, {
     walletsData: {
@@ -136,12 +136,12 @@ declare const getDahboardSchema: z.ZodObject<{
         outcom: number;
     }[];
     latestTransactions: {
+        memo: string | null;
+        amount: number | bigint;
         fee: number;
         checking_id: string;
-        amount: number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -151,9 +151,9 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook_status: string | null;
     }[];
     allWalletsResume: {
+        in: number;
         total: number;
         out: number;
-        in: number;
     };
 }, {
     walletsData: {
@@ -163,12 +163,12 @@ declare const getDahboardSchema: z.ZodObject<{
         outcom: number;
     }[];
     latestTransactions: {
+        memo: string | null;
+        amount: number | bigint;
         fee: number;
         checking_id: string;
-        amount: number | bigint;
         wallet: string;
         pending: boolean;
-        memo: string | null;
         time: string | Date;
         hash: string | null;
         preimage: string | null;
@@ -178,9 +178,9 @@ declare const getDahboardSchema: z.ZodObject<{
         webhook_status: string | null;
     }[];
     allWalletsResume: {
+        in: number;
         total: number;
         out: number;
-        in: number;
     };
 }>;
 export type getResponseDahboardType = z.infer<typeof getDahboardSchema>;

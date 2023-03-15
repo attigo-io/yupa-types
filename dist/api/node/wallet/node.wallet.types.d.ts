@@ -362,11 +362,11 @@ declare const payInvoiceWithNodeDataSchema: z.ZodObject<{
     tokens: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
     id: string;
+    fee: number;
     mtokens: string;
     secret: string;
     tokens: number;
     confirmed_at: string;
-    fee: number;
     fee_mtokens: string;
     hops: {
         public_key: string;
@@ -395,11 +395,11 @@ declare const payInvoiceWithNodeDataSchema: z.ZodObject<{
     safe_tokens: number;
 }, {
     id: string;
+    fee: number;
     mtokens: string;
     secret: string;
     tokens: number;
     confirmed_at: string;
-    fee: number;
     fee_mtokens: string;
     hops: {
         public_key: string;
@@ -520,11 +520,11 @@ declare const payInvoiceWithNodeResponseSchmea: z.ZodObject<{
         tokens: z.ZodNumber;
     }, "strip", z.ZodTypeAny, {
         id: string;
+        fee: number;
         mtokens: string;
         secret: string;
         tokens: number;
         confirmed_at: string;
-        fee: number;
         fee_mtokens: string;
         hops: {
             public_key: string;
@@ -553,11 +553,11 @@ declare const payInvoiceWithNodeResponseSchmea: z.ZodObject<{
         safe_tokens: number;
     }, {
         id: string;
+        fee: number;
         mtokens: string;
         secret: string;
         tokens: number;
         confirmed_at: string;
-        fee: number;
         fee_mtokens: string;
         hops: {
             public_key: string;
@@ -588,11 +588,11 @@ declare const payInvoiceWithNodeResponseSchmea: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     payment: {
         id: string;
+        fee: number;
         mtokens: string;
         secret: string;
         tokens: number;
         confirmed_at: string;
-        fee: number;
         fee_mtokens: string;
         hops: {
             public_key: string;
@@ -623,11 +623,11 @@ declare const payInvoiceWithNodeResponseSchmea: z.ZodObject<{
 }, {
     payment: {
         id: string;
+        fee: number;
         mtokens: string;
         secret: string;
         tokens: number;
         confirmed_at: string;
-        fee: number;
         fee_mtokens: string;
         hops: {
             public_key: string;
