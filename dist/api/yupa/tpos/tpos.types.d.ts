@@ -120,6 +120,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         checking_id: z.ZodString;
         amount: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodString]>, z.ZodBigInt]>;
         fee: z.ZodNumber;
+        yupa_fee: z.ZodNumber;
         wallet: z.ZodString;
         pending: z.ZodBoolean;
         memo: z.ZodNullable<z.ZodString>;
@@ -145,6 +146,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        yupa_fee: number;
         tpos_id: string | null;
     }, {
         memo: string | null;
@@ -160,6 +162,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        yupa_fee: number;
         tpos_id: string | null;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -177,6 +180,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        yupa_fee: number;
         tpos_id: string | null;
     }[];
 }, {
@@ -194,6 +198,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         extra: string | null;
         webhook: string | null;
         webhook_status: string | null;
+        yupa_fee: number;
         tpos_id: string | null;
     }[];
 }>;

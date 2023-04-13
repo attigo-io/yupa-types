@@ -4,6 +4,7 @@ export const yupaApiPaymentSchema = z.object({
   checking_id: z.string(),
   amount: z.number().or(z.string()).or(z.bigint()),
   fee: z.number(),
+  yupa_fee: z.number(),
   wallet: z.string(),
   pending: z.boolean(),
   memo: z.string().nullable(),
