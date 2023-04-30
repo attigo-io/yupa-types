@@ -254,5 +254,15 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
     };
 }>;
 export type getNodeInfoResponseType = z.infer<typeof getNodeInfoResponseSchema>;
+export declare const NodeStatusEnumSchema: z.ZodEnum<["online", "starting", "offline", "error"]>;
+export type NodeStatusEnum = z.infer<typeof NodeStatusEnumSchema>;
+export declare const getNodeStatusResponseSchema: z.ZodObject<{
+    status: z.ZodEnum<["online", "starting", "offline", "error"]>;
+}, "strip", z.ZodTypeAny, {
+    status: "error" | "online" | "starting" | "offline";
+}, {
+    status: "error" | "online" | "starting" | "offline";
+}>;
+export type getNodeStatusResponseType = z.infer<typeof getNodeStatusResponseSchema>;
 export {};
 //# sourceMappingURL=manageNode.types.d.ts.map

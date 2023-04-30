@@ -57,3 +57,17 @@ const getNodeResultSchema = z.object({
 
 const getNodeInfoResponseSchema = z.object({ node: getNodeResultSchema })
 export type getNodeInfoResponseType = z.infer<typeof getNodeInfoResponseSchema>
+
+export const NodeStatusEnumSchema = z.enum([
+  'online',
+  'starting',
+  'offline',
+  'error',
+])
+
+export type NodeStatusEnum = z.infer<typeof NodeStatusEnumSchema>
+
+export const getNodeStatusResponseSchema = z.object({
+  status: NodeStatusEnumSchema,
+})
+export type getNodeStatusResponseType = z.infer<typeof getNodeStatusResponseSchema>
