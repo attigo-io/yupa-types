@@ -1,1 +1,1 @@
-{"version":3,"file":"node.types.d.ts","sourceRoot":"","sources":["../../../src/api/node/node.types.ts"],"names":[],"mappings":"AAAA,cAAc,8BAA8B,CAAA;AAC5C,cAAc,+BAA+B,CAAA;AAC7C,cAAc,gCAAgC,CAAA;AAC9C,cAAc,4BAA4B,CAAA"}
+{"version":3,"file":"node.types.d.ts","sourceRoot":"","sources":["../../../src/api/node/node.types.ts"],"names":[],"mappings":"AAAA,cAAc,8BAA8B,CAAA;AAC5C,cAAc,+BAA+B,CAAA;AAC7C,cAAc,gCAAgC,CAAA;AAC9C,cAAc,4BAA4B,CAAA;AAC1C,cAAc,2BAA2B,CAAA"}
