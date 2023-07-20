@@ -5,4 +5,5 @@ export * from './api/lnurl/lnurl.types';
 export * from './api/notifications/notifications.types';
 export * from './api/rates/rates.types';
 export * from './api/account/account.types';
+export * from "./api/boltCard/boltCard.types";
 //# sourceMappingURL=index.d.ts.map
