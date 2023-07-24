@@ -44,13 +44,7 @@ export interface ReceiveFromYupaFailedNotificationData extends baseNotificationD
     invoiceAmountSat: number;
     failedReason: string;
 }
-export type notification_status_enum = {
-    NEW: "NEW";
-    DELIVERED: "DELIVERED";
-    SEEN: "SEEN";
-    OPENED: "OPENED";
-    ARCHIVED: "ARCHIVED";
-};
+export type notification_status_enum = "NEW" | "DELIVERED" | "SEEN" | "OPENED" | "ARCHIVED";
 export type JsonValue = string | number | boolean | JsonObject | JsonArray | null;
 export type JsonObject = {
     [Key in string]?: JsonValue;

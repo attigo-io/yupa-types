@@ -55,13 +55,12 @@ export interface ReceiveFromYupaFailedNotificationData
   failedReason: string;
 }
 
-export type notification_status_enum = {
-  NEW: "NEW";
-  DELIVERED: "DELIVERED";
-  SEEN: "SEEN";
-  OPENED: "OPENED";
-  ARCHIVED: "ARCHIVED";
-};
+export type notification_status_enum =
+  | "NEW"
+  | "DELIVERED"
+  | "SEEN"
+  | "OPENED"
+  | "ARCHIVED";
 
 export type JsonValue =
   | string
