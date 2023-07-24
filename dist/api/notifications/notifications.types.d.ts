@@ -45,17 +45,23 @@ export interface ReceiveFromYupaFailedNotificationData extends baseNotificationD
     failedReason: string;
 }
 export type notification_status_enum = {
-    NEW: 'NEW';
-    DELIVERED: 'DELIVERED';
-    SEEN: 'SEEN';
-    OPENED: 'OPENED';
-    ARCHIVED: 'ARCHIVED';
+    NEW: "NEW";
+    DELIVERED: "DELIVERED";
+    SEEN: "SEEN";
+    OPENED: "OPENED";
+    ARCHIVED: "ARCHIVED";
 };
+export type JsonValue = string | number | boolean | JsonObject | JsonArray | null;
+export type JsonObject = {
+    [Key in string]?: JsonValue;
+};
+export interface JsonArray extends Array<JsonValue> {
+}
 export type notification = {
     id: number;
     title: string | null;
     info: string | null;
-    action_data: Record<string, any>;
+    action_data: Record<string, any> | JsonValue;
     account_id: string;
     created_at: Date | null;
     seen_at: Date | null;
