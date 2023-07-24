@@ -1,0 +1,1 @@
+{"version":3,"file":"socketEventsEnum.d.ts","sourceRoot":"","sources":["../../src/socket-io/socketEventsEnum.ts"],"names":[],"mappings":"AAAA,oBAAY,YAAY;IACtB,qBAAqB,0BAA0B;IAC/C,uBAAuB,4BAA4B;IACnD,wBAAwB,6BAA6B;IACrD,wBAAwB,6BAA6B;IACrD,4BAA4B,iCAAiC;IAC7D,+BAA+B,oCAAoC;IACnE,6BAA6B,kCAAkC;IAE/D,0BAA0B,+BAA+B;IACzD,+BAA+B,oCAAoC;CACpE"}
