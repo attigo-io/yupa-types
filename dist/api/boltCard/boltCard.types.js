@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getBoltCardStatsSchema = exports.getBoltCardHitsUserResponseSchema = exports.getBoltCardUserRouteResponse = exports.getBoltCardRefundsUserReponseSchema = exports.boltCardRefundSchema = exports.getBoltCardsUserRouteResponseSchema = exports.boltCardHitSchema = exports.createBoltCardResponseSchema = exports.boltCardSchema = void 0;
+exports.boltCardTypeSchema = exports.getBoltCardStatsSchema = exports.getBoltCardHitsUserResponseSchema = exports.getBoltCardUserRouteResponse = exports.getBoltCardRefundsUserReponseSchema = exports.boltCardRefundSchema = exports.getBoltCardsUserRouteResponseSchema = exports.boltCardHitSchema = exports.createBoltCardResponseSchema = exports.boltCardSchema = void 0;
 const zod_1 = require("zod");
 const yupa_types_1 = require("../yupa/yupa.types");
 exports.boltCardSchema = zod_1.z.object({
@@ -78,4 +78,13 @@ exports.getBoltCardStatsSchema = zod_1.z.object({
         sum: zod_1.z.number(),
         total: zod_1.z.number(),
     }),
+});
+exports.boltCardTypeSchema = zod_1.z.object({
+    id: zod_1.z.string(),
+    name: zod_1.z.string(),
+    min_withdrawable: zod_1.z.number(),
+    max_withdrawable: zod_1.z.number(),
+    daily_limit: zod_1.z.number(),
+    weekly_limit: zod_1.z.number(),
+    monthly_limit: zod_1.z.number(),
 });

@@ -118,3 +118,15 @@ export const getBoltCardStatsSchema = z.object({
 export type getBoltCardStatsResponseType = z.infer<
   typeof getBoltCardStatsSchema
 >
+
+export const boltCardTypeSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  min_withdrawable: z.number(),
+  max_withdrawable: z.number(),
+  daily_limit: z.number(),
+  weekly_limit: z.number(),
+  monthly_limit: z.number(),
+})
+
+export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>
