@@ -748,4 +748,63 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
     }[];
 }>;
 export type getBoltCardHitsResponseType = z.infer<typeof getBoltCardHitsUserResponseSchema>;
+export declare const getBoltCardStatsSchema: z.ZodObject<{
+    monthly: z.ZodObject<{
+        sum: z.ZodNumber;
+        total: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        total: number;
+        sum: number;
+    }, {
+        total: number;
+        sum: number;
+    }>;
+    daily: z.ZodObject<{
+        sum: z.ZodNumber;
+        total: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        total: number;
+        sum: number;
+    }, {
+        total: number;
+        sum: number;
+    }>;
+    weekly: z.ZodObject<{
+        sum: z.ZodNumber;
+        total: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        total: number;
+        sum: number;
+    }, {
+        total: number;
+        sum: number;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    monthly: {
+        total: number;
+        sum: number;
+    };
+    daily: {
+        total: number;
+        sum: number;
+    };
+    weekly: {
+        total: number;
+        sum: number;
+    };
+}, {
+    monthly: {
+        total: number;
+        sum: number;
+    };
+    daily: {
+        total: number;
+        sum: number;
+    };
+    weekly: {
+        total: number;
+        sum: number;
+    };
+}>;
+export type getBoltCardStatsResponseType = z.infer<typeof getBoltCardStatsSchema>;
 //# sourceMappingURL=boltCard.types.d.ts.map

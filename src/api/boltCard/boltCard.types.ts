@@ -95,3 +95,22 @@ export const getBoltCardHitsUserResponseSchema = z.object({
 export type getBoltCardHitsResponseType = z.infer<
   typeof getBoltCardHitsUserResponseSchema
 >
+
+export const getBoltCardStatsSchema = z.object({
+  monthly: z.object({
+    sum: z.number(),
+    total: z.number(),
+  }),
+  daily: z.object({
+    sum: z.number(),
+    total: z.number(),
+  }),
+  weekly: z.object({
+    sum: z.number(),
+    total: z.number(),
+  }),
+})
+
+export type getBoltCardStatsResponseType = z.infer<
+  typeof getBoltCardStatsSchema
+>
