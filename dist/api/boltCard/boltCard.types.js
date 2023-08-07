@@ -1,8 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getBoltCardTypeResponseShema = exports.boltCardTypeSchema = exports.getBoltCardStatsSchema = exports.getBoltCardHitsUserResponseSchema = exports.getBoltCardUserRouteResponse = exports.getBoltCardRefundsUserReponseSchema = exports.boltCardRefundSchema = exports.getBoltCardsUserRouteResponseSchema = exports.boltCardHitSchema = exports.createBoltCardResponseSchema = exports.boltCardSchema = void 0;
+exports.getBoltCardTypeResponseShema = exports.getBoltCardStatsSchema = exports.getBoltCardHitsUserResponseSchema = exports.getBoltCardUserRouteResponse = exports.getBoltCardRefundsUserReponseSchema = exports.boltCardRefundSchema = exports.getBoltCardsUserRouteResponseSchema = exports.boltCardHitSchema = exports.createBoltCardResponseSchema = exports.boltCardSchema = exports.boltCardTypeSchema = void 0;
 const zod_1 = require("zod");
 const yupa_types_1 = require("../yupa/yupa.types");
+exports.boltCardTypeSchema = zod_1.z.object({
+    id: zod_1.z.string(),
+    name: zod_1.z.string(),
+    min_withdrawable: zod_1.z.number(),
+    max_withdrawable: zod_1.z.number(),
+    daily_limit: zod_1.z.number(),
+    weekly_limit: zod_1.z.number(),
+    monthly_limit: zod_1.z.number(),
+});
 exports.boltCardSchema = zod_1.z.object({
     id: zod_1.z.string(),
     wallet_id: zod_1.z.string().nullable(),
@@ -25,6 +34,7 @@ exports.boltCardSchema = zod_1.z.object({
     prev_k2: zod_1.z.string(),
     otp: zod_1.z.string(),
     created_at: zod_1.z.date(),
+    card_type: exports.boltCardTypeSchema
 });
 exports.createBoltCardResponseSchema = zod_1.z.object({
     boltCard: exports.boltCardSchema,
@@ -78,15 +88,6 @@ exports.getBoltCardStatsSchema = zod_1.z.object({
         sum: zod_1.z.number(),
         total: zod_1.z.number(),
     }),
-});
-exports.boltCardTypeSchema = zod_1.z.object({
-    id: zod_1.z.string(),
-    name: zod_1.z.string(),
-    min_withdrawable: zod_1.z.number(),
-    max_withdrawable: zod_1.z.number(),
-    daily_limit: zod_1.z.number(),
-    weekly_limit: zod_1.z.number(),
-    monthly_limit: zod_1.z.number(),
 });
 exports.getBoltCardTypeResponseShema = zod_1.z.object({
     type: exports.boltCardTypeSchema,

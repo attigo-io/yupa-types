@@ -1,6 +1,19 @@
 import { z } from 'zod'
 import { yupaApiPaymentSchema } from '../yupa/yupa.types'
 
+export const boltCardTypeSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  min_withdrawable: z.number(),
+  max_withdrawable: z.number(),
+  daily_limit: z.number(),
+  weekly_limit: z.number(),
+  monthly_limit: z.number(),
+})
+
+export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>
+
+
 export const boltCardSchema = z.object({
   id: z.string(),
   wallet_id: z.string().nullable(),
@@ -23,6 +36,7 @@ export const boltCardSchema = z.object({
   prev_k2: z.string(),
   otp: z.string(),
   created_at: z.date(),
+  card_type: boltCardTypeSchema
 })
   
   export type BoltCardType = z.infer<typeof boltCardSchema>
@@ -118,18 +132,6 @@ export const getBoltCardStatsSchema = z.object({
 export type getBoltCardStatsResponseType = z.infer<
   typeof getBoltCardStatsSchema
 >
-
-export const boltCardTypeSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  min_withdrawable: z.number(),
-  max_withdrawable: z.number(),
-  daily_limit: z.number(),
-  weekly_limit: z.number(),
-  monthly_limit: z.number(),
-})
-
-export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>
 
 export const getBoltCardTypeResponseShema = z.object({
   type: boltCardTypeSchema,

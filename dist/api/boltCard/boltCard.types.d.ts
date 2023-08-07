@@ -1,4 +1,30 @@
 import { z } from 'zod';
+export declare const boltCardTypeSchema: z.ZodObject<{
+    id: z.ZodString;
+    name: z.ZodString;
+    min_withdrawable: z.ZodNumber;
+    max_withdrawable: z.ZodNumber;
+    daily_limit: z.ZodNumber;
+    weekly_limit: z.ZodNumber;
+    monthly_limit: z.ZodNumber;
+}, "strip", z.ZodTypeAny, {
+    id: string;
+    name: string;
+    min_withdrawable: number;
+    max_withdrawable: number;
+    daily_limit: number;
+    weekly_limit: number;
+    monthly_limit: number;
+}, {
+    id: string;
+    name: string;
+    min_withdrawable: number;
+    max_withdrawable: number;
+    daily_limit: number;
+    weekly_limit: number;
+    monthly_limit: number;
+}>;
+export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>;
 export declare const boltCardSchema: z.ZodObject<{
     id: z.ZodString;
     wallet_id: z.ZodNullable<z.ZodString>;
@@ -21,9 +47,39 @@ export declare const boltCardSchema: z.ZodObject<{
     prev_k2: z.ZodString;
     otp: z.ZodString;
     created_at: z.ZodDate;
+    card_type: z.ZodObject<{
+        id: z.ZodString;
+        name: z.ZodString;
+        min_withdrawable: z.ZodNumber;
+        max_withdrawable: z.ZodNumber;
+        daily_limit: z.ZodNumber;
+        weekly_limit: z.ZodNumber;
+        monthly_limit: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    }, {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    }>;
 }, "strip", z.ZodTypeAny, {
     id: string;
     created_at: Date;
+    min_withdrawable: number;
+    max_withdrawable: number;
+    daily_limit: number;
+    weekly_limit: number;
+    monthly_limit: number;
     wallet_id: string | null;
     card_name: string;
     card_type_id: string;
@@ -31,11 +87,6 @@ export declare const boltCardSchema: z.ZodObject<{
     external_id: string;
     counter: number;
     enabled: boolean;
-    min_withdrawable: number;
-    max_withdrawable: number;
-    daily_limit: number;
-    weekly_limit: number;
-    monthly_limit: number;
     k0: string;
     k1: string;
     k2: string;
@@ -43,9 +94,23 @@ export declare const boltCardSchema: z.ZodObject<{
     prev_k1: string;
     prev_k2: string;
     otp: string;
+    card_type: {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    };
 }, {
     id: string;
     created_at: Date;
+    min_withdrawable: number;
+    max_withdrawable: number;
+    daily_limit: number;
+    weekly_limit: number;
+    monthly_limit: number;
     wallet_id: string | null;
     card_name: string;
     card_type_id: string;
@@ -53,11 +118,6 @@ export declare const boltCardSchema: z.ZodObject<{
     external_id: string;
     counter: number;
     enabled: boolean;
-    min_withdrawable: number;
-    max_withdrawable: number;
-    daily_limit: number;
-    weekly_limit: number;
-    monthly_limit: number;
     k0: string;
     k1: string;
     k2: string;
@@ -65,6 +125,15 @@ export declare const boltCardSchema: z.ZodObject<{
     prev_k1: string;
     prev_k2: string;
     otp: string;
+    card_type: {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    };
 }>;
 export type BoltCardType = z.infer<typeof boltCardSchema>;
 export declare const createBoltCardResponseSchema: z.ZodObject<{
@@ -90,9 +159,39 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         prev_k2: z.ZodString;
         otp: z.ZodString;
         created_at: z.ZodDate;
+        card_type: z.ZodObject<{
+            id: z.ZodString;
+            name: z.ZodString;
+            min_withdrawable: z.ZodNumber;
+            max_withdrawable: z.ZodNumber;
+            daily_limit: z.ZodNumber;
+            weekly_limit: z.ZodNumber;
+            monthly_limit: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        }, {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        }>;
     }, "strip", z.ZodTypeAny, {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -100,11 +199,6 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -112,9 +206,23 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }, {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -122,11 +230,6 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -134,11 +237,25 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }>;
 }, "strip", z.ZodTypeAny, {
     boltCard: {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -146,11 +263,6 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -158,11 +270,25 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     };
 }, {
     boltCard: {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -170,11 +296,6 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -182,6 +303,15 @@ export declare const createBoltCardResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     };
 }>;
 export type CreateBoltCardResponseType = z.infer<typeof createBoltCardResponseSchema>;
@@ -245,9 +375,39 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         prev_k2: z.ZodString;
         otp: z.ZodString;
         created_at: z.ZodDate;
+        card_type: z.ZodObject<{
+            id: z.ZodString;
+            name: z.ZodString;
+            min_withdrawable: z.ZodNumber;
+            max_withdrawable: z.ZodNumber;
+            daily_limit: z.ZodNumber;
+            weekly_limit: z.ZodNumber;
+            monthly_limit: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        }, {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        }>;
     }, "strip", z.ZodTypeAny, {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -255,11 +415,6 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -267,9 +422,23 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }, {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -277,11 +446,6 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -289,11 +453,25 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     cards: {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -301,11 +479,6 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -313,11 +486,25 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }[];
 }, {
     cards: {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -325,11 +512,6 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -337,6 +519,15 @@ export declare const getBoltCardsUserRouteResponseSchema: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }[];
 }>;
 export declare const boltCardRefundSchema: z.ZodObject<{
@@ -539,9 +730,39 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         prev_k2: z.ZodString;
         otp: z.ZodString;
         created_at: z.ZodDate;
+        card_type: z.ZodObject<{
+            id: z.ZodString;
+            name: z.ZodString;
+            min_withdrawable: z.ZodNumber;
+            max_withdrawable: z.ZodNumber;
+            daily_limit: z.ZodNumber;
+            weekly_limit: z.ZodNumber;
+            monthly_limit: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        }, {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        }>;
     }, "strip", z.ZodTypeAny, {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -549,11 +770,6 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -561,9 +777,23 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }, {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -571,11 +801,6 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -583,11 +808,25 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     }>;
 }, "strip", z.ZodTypeAny, {
     card: {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -595,11 +834,6 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -607,11 +841,25 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     };
 }, {
     card: {
         id: string;
         created_at: Date;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
         wallet_id: string | null;
         card_name: string;
         card_type_id: string;
@@ -619,11 +867,6 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         external_id: string;
         counter: number;
         enabled: boolean;
-        min_withdrawable: number;
-        max_withdrawable: number;
-        daily_limit: number;
-        weekly_limit: number;
-        monthly_limit: number;
         k0: string;
         k1: string;
         k2: string;
@@ -631,6 +874,15 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
         prev_k1: string;
         prev_k2: string;
         otp: string;
+        card_type: {
+            id: string;
+            name: string;
+            min_withdrawable: number;
+            max_withdrawable: number;
+            daily_limit: number;
+            weekly_limit: number;
+            monthly_limit: number;
+        };
     };
 }>;
 export type getBoltCardUserRouteResponseType = z.infer<typeof getBoltCardUserRouteResponse>;
@@ -879,32 +1131,6 @@ export declare const getBoltCardStatsSchema: z.ZodObject<{
     };
 }>;
 export type getBoltCardStatsResponseType = z.infer<typeof getBoltCardStatsSchema>;
-export declare const boltCardTypeSchema: z.ZodObject<{
-    id: z.ZodString;
-    name: z.ZodString;
-    min_withdrawable: z.ZodNumber;
-    max_withdrawable: z.ZodNumber;
-    daily_limit: z.ZodNumber;
-    weekly_limit: z.ZodNumber;
-    monthly_limit: z.ZodNumber;
-}, "strip", z.ZodTypeAny, {
-    id: string;
-    name: string;
-    min_withdrawable: number;
-    max_withdrawable: number;
-    daily_limit: number;
-    weekly_limit: number;
-    monthly_limit: number;
-}, {
-    id: string;
-    name: string;
-    min_withdrawable: number;
-    max_withdrawable: number;
-    daily_limit: number;
-    weekly_limit: number;
-    monthly_limit: number;
-}>;
-export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>;
 export declare const getBoltCardTypeResponseShema: z.ZodObject<{
     type: z.ZodObject<{
         id: z.ZodString;
