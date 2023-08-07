@@ -905,4 +905,52 @@ export declare const boltCardTypeSchema: z.ZodObject<{
     monthly_limit: number;
 }>;
 export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>;
+export declare const getBoltCardTypeResponseShema: z.ZodObject<{
+    type: z.ZodObject<{
+        id: z.ZodString;
+        name: z.ZodString;
+        min_withdrawable: z.ZodNumber;
+        max_withdrawable: z.ZodNumber;
+        daily_limit: z.ZodNumber;
+        weekly_limit: z.ZodNumber;
+        monthly_limit: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    }, {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    type: {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    };
+}, {
+    type: {
+        id: string;
+        name: string;
+        min_withdrawable: number;
+        max_withdrawable: number;
+        daily_limit: number;
+        weekly_limit: number;
+        monthly_limit: number;
+    };
+}>;
+export type getBoltCardTypeResponseType = z.infer<typeof getBoltCardTypeResponseShema>;
 //# sourceMappingURL=boltCard.types.d.ts.map

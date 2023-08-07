@@ -130,3 +130,11 @@ export const boltCardTypeSchema = z.object({
 })
 
 export type BoltCardTypeType = z.infer<typeof boltCardTypeSchema>
+
+export const getBoltCardTypeResponseShema = z.object({
+  type: boltCardTypeSchema,
+})
+
+export type getBoltCardTypeResponseType = z.infer<
+  typeof getBoltCardTypeResponseShema
+>

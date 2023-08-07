@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.boltCardTypeSchema = exports.getBoltCardStatsSchema = exports.getBoltCardHitsUserResponseSchema = exports.getBoltCardUserRouteResponse = exports.getBoltCardRefundsUserReponseSchema = exports.boltCardRefundSchema = exports.getBoltCardsUserRouteResponseSchema = exports.boltCardHitSchema = exports.createBoltCardResponseSchema = exports.boltCardSchema = void 0;
+exports.getBoltCardTypeResponseShema = exports.boltCardTypeSchema = exports.getBoltCardStatsSchema = exports.getBoltCardHitsUserResponseSchema = exports.getBoltCardUserRouteResponse = exports.getBoltCardRefundsUserReponseSchema = exports.boltCardRefundSchema = exports.getBoltCardsUserRouteResponseSchema = exports.boltCardHitSchema = exports.createBoltCardResponseSchema = exports.boltCardSchema = void 0;
 const zod_1 = require("zod");
 const yupa_types_1 = require("../yupa/yupa.types");
 exports.boltCardSchema = zod_1.z.object({
@@ -87,4 +87,7 @@ exports.boltCardTypeSchema = zod_1.z.object({
     daily_limit: zod_1.z.number(),
     weekly_limit: zod_1.z.number(),
     monthly_limit: zod_1.z.number(),
+});
+exports.getBoltCardTypeResponseShema = zod_1.z.object({
+    type: exports.boltCardTypeSchema,
 });
