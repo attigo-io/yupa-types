@@ -9,6 +9,7 @@ exports.yupaApiPaymentSchema = zod_1.z.object({
     yupa_fee: zod_1.z.number(),
     wallet: zod_1.z.string(),
     pending: zod_1.z.boolean(),
+    is_expired: zod_1.z.boolean(),
     memo: zod_1.z.string().nullable(),
     time: zod_1.z.date().or(zod_1.z.string()),
     hash: zod_1.z.string().nullable(),

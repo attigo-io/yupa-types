@@ -7,6 +7,7 @@ export const yupaApiPaymentSchema = z.object({
   yupa_fee: z.number(),
   wallet: z.string(),
   pending: z.boolean(),
+  is_expired: z.boolean(),
   memo: z.string().nullable(),
   time: z.date().or(z.string()),
   hash: z.string().nullable(),

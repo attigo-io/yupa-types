@@ -123,6 +123,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         yupa_fee: z.ZodNumber;
         wallet: z.ZodString;
         pending: z.ZodBoolean;
+        is_expired: z.ZodBoolean;
         memo: z.ZodNullable<z.ZodString>;
         time: z.ZodUnion<[z.ZodDate, z.ZodString]>;
         hash: z.ZodNullable<z.ZodString>;
@@ -147,6 +148,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
+        is_expired: boolean;
         tpos_id: string | null;
     }, {
         memo: string | null;
@@ -163,6 +165,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
+        is_expired: boolean;
         tpos_id: string | null;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -181,6 +184,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
+        is_expired: boolean;
         tpos_id: string | null;
     }[];
 }, {
@@ -199,6 +203,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
+        is_expired: boolean;
         tpos_id: string | null;
     }[];
 }>;

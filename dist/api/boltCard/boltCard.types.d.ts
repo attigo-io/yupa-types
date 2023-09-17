@@ -565,6 +565,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             yupa_fee: z.ZodNumber;
             wallet: z.ZodString;
             pending: z.ZodBoolean;
+            is_expired: z.ZodBoolean;
             memo: z.ZodNullable<z.ZodString>;
             time: z.ZodUnion<[z.ZodDate, z.ZodString]>;
             hash: z.ZodNullable<z.ZodString>;
@@ -589,6 +590,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         }, {
             memo: string | null;
@@ -605,6 +607,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         }>>;
     }>, "strip", z.ZodTypeAny, {
@@ -628,6 +631,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }, {
@@ -651,6 +655,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }>, "many">;
@@ -676,6 +681,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }[];
@@ -701,6 +707,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }[];
@@ -907,6 +914,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             yupa_fee: z.ZodNumber;
             wallet: z.ZodString;
             pending: z.ZodBoolean;
+            is_expired: z.ZodBoolean;
             memo: z.ZodNullable<z.ZodString>;
             time: z.ZodUnion<[z.ZodDate, z.ZodString]>;
             hash: z.ZodNullable<z.ZodString>;
@@ -931,6 +939,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         }, {
             memo: string | null;
@@ -947,6 +956,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         }>>;
     }>, "strip", z.ZodTypeAny, {
@@ -976,6 +986,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }, {
@@ -1005,6 +1016,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }>, "many">;
@@ -1036,6 +1048,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }[];
@@ -1067,6 +1080,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             webhook: string | null;
             webhook_status: string | null;
             yupa_fee: number;
+            is_expired: boolean;
             tpos_id: string | null;
         } | null;
     }[];
