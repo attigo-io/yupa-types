@@ -20,6 +20,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     memo: string | null;
     amount: string | number | bigint;
     fee: number;
+    is_expired: boolean;
     checking_id: string;
     wallet: string;
     pending: boolean;
@@ -31,12 +32,12 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     webhook: string | null;
     webhook_status: string | null;
     yupa_fee: number;
-    is_expired: boolean;
     tpos_id: string | null;
 }, {
     memo: string | null;
     amount: string | number | bigint;
     fee: number;
+    is_expired: boolean;
     checking_id: string;
     wallet: string;
     pending: boolean;
@@ -48,7 +49,6 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     webhook: string | null;
     webhook_status: string | null;
     yupa_fee: number;
-    is_expired: boolean;
     tpos_id: string | null;
 }>;
 export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
@@ -73,6 +73,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -84,12 +85,12 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }, {
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -101,7 +102,6 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -109,6 +109,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -120,7 +121,6 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }[];
 }, {
@@ -128,6 +128,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -139,7 +140,6 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }[];
 }>;

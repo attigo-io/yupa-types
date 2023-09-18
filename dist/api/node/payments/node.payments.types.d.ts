@@ -18,6 +18,7 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: z.ZodNumber;
         in: z.ZodBoolean;
         is_paid: z.ZodBoolean;
+        is_expired: z.ZodBoolean;
     }, "strip", z.ZodTypeAny, {
         date: string | Date;
         memo: string;
@@ -25,6 +26,7 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
         is_paid: boolean;
+        is_expired: boolean;
     }, {
         date: string | Date;
         memo: string;
@@ -32,6 +34,7 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
         is_paid: boolean;
+        is_expired: boolean;
     }>, "many">;
     meta: z.ZodObject<{
         invoicesToken: z.ZodOptional<z.ZodString>;
@@ -51,6 +54,7 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
         is_paid: boolean;
+        is_expired: boolean;
     }[];
     meta: {
         invoicesToken?: string | undefined;
@@ -64,6 +68,7 @@ export declare const getNodePaymentsHistoryResponseSchema: z.ZodObject<{
         fee: number;
         in: boolean;
         is_paid: boolean;
+        is_expired: boolean;
     }[];
     meta: {
         invoicesToken?: string | undefined;

@@ -137,6 +137,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -148,12 +149,12 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }, {
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -165,7 +166,6 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -173,6 +173,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -184,7 +185,6 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }[];
 }, {
@@ -192,6 +192,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         memo: string | null;
         amount: string | number | bigint;
         fee: number;
+        is_expired: boolean;
         checking_id: string;
         wallet: string;
         pending: boolean;
@@ -203,7 +204,6 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         webhook: string | null;
         webhook_status: string | null;
         yupa_fee: number;
-        is_expired: boolean;
         tpos_id: string | null;
     }[];
 }>;

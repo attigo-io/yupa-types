@@ -16,7 +16,8 @@ exports.getNodePaymentsHistoryResponseSchema = zod_1.z.object({
         date: zod_1.z.string().or(zod_1.z.date()),
         fee: zod_1.z.number(),
         in: zod_1.z.boolean(),
-        is_paid: zod_1.z.boolean()
+        is_paid: zod_1.z.boolean(),
+        is_expired: zod_1.z.boolean(),
     })),
     meta: zod_1.z.object({
         invoicesToken: zod_1.z.string().optional(),
