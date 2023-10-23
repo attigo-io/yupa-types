@@ -22,3 +22,4 @@ __exportStar(require("./notifications/notifications.types"), exports);
 __exportStar(require("./rates/rates.types"), exports);
 __exportStar(require("./account/account.types"), exports);
 __exportStar(require("./boltCard/boltCard.types"), exports);
+__exportStar(require("./YupaCoinBrc20/YupaCoinBrc20.types"), exports);
