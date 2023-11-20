@@ -10,6 +10,7 @@ var SocketEvents;
     SocketEvents["private_yupa_transfer_result"] = "private_yupa_transfer_result";
     SocketEvents["private_card_transaction_failed"] = "private_card_transaction_failed";
     SocketEvents["private_card_transaction_done"] = "private_card_transaction_done";
+    SocketEvents["private_yupa_coin_received"] = "private_yupa_coin_received";
     SocketEvents["protected_btc_price_update"] = "protected_btc_price_update";
     SocketEvents["client_request_btc_price_update"] = "client_request_btc_price_update";
 })(SocketEvents = exports.SocketEvents || (exports.SocketEvents = {}));

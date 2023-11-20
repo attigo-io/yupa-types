@@ -29,6 +29,10 @@ export interface ServerToClientEvents {
     arg: BaseDataWithNotification
   ) => void;
 
+  [SocketEvents.private_yupa_coin_received]: (
+    arg: BaseDataWithNotification
+  ) => void;
+
   [SocketEvents.protected_btc_price_update]: (
     arg: getBitcoinRatesResponseType
   ) => void;
@@ -38,4 +42,4 @@ export interface ClientToServerEvents {
   [SocketEvents.client_request_btc_price_update]: () => void;
 }
 
-export * from './socketEventsEnum'
+export * from "./socketEventsEnum";
