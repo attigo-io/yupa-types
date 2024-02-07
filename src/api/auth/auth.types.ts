@@ -45,6 +45,7 @@ const getMeResponseSchema = z.object({
     is_authy_tfa: z.boolean().optional().nullable(),
     name: z.string(),
     is_email_verified: z.boolean(),
+    is_banned: z.boolean(),
   }),
 })
 

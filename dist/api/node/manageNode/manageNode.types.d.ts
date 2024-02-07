@@ -33,6 +33,7 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 public_key: z.ZodString;
                 updated_at: z.ZodOptional<z.ZodString>;
             }, "strip", z.ZodTypeAny, {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -40,8 +41,8 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }, {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -49,16 +50,15 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }>, "many">;
             transaction_id: z.ZodString;
             transaction_vout: z.ZodNumber;
             updated_at: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            updated_at?: string | undefined;
             id: string;
             capacity: number;
             policies: {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -66,15 +66,15 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }[];
             transaction_id: string;
             transaction_vout: number;
+            updated_at?: string | undefined;
         }, {
-            updated_at?: string | undefined;
             id: string;
             capacity: number;
             policies: {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -82,10 +82,10 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }[];
             transaction_id: string;
             transaction_vout: number;
+            updated_at?: string | undefined;
         }>, "many">>;
         color: z.ZodString;
         features: z.ZodArray<z.ZodObject<{
@@ -94,15 +94,15 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
             is_required: z.ZodBoolean;
             type: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            type?: string | undefined;
             bit: number;
             is_known: boolean;
             is_required: boolean;
+            type?: string | undefined;
         }, {
-            type?: string | undefined;
             bit: number;
             is_known: boolean;
             is_required: boolean;
+            type?: string | undefined;
         }>, "many">;
         sockets: z.ZodArray<z.ZodObject<{
             socket: z.ZodString;
@@ -116,12 +116,25 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
         }>, "many">;
         updated_at: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        updated_at?: string | undefined;
+        alias: string;
+        capacity: number;
+        channel_count: number;
+        color: string;
+        features: {
+            bit: number;
+            is_known: boolean;
+            is_required: boolean;
+            type?: string | undefined;
+        }[];
+        sockets: {
+            type: string;
+            socket: string;
+        }[];
         channels?: {
-            updated_at?: string | undefined;
             id: string;
             capacity: number;
             policies: {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -129,32 +142,32 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }[];
             transaction_id: string;
             transaction_vout: number;
+            updated_at?: string | undefined;
         }[] | undefined;
-        alias: string;
-        capacity: number;
-        channel_count: number;
-        color: string;
-        features: {
-            type?: string | undefined;
-            bit: number;
-            is_known: boolean;
-            is_required: boolean;
-        }[];
-        sockets: {
-            type: string;
-            socket: string;
-        }[];
+        updated_at?: string | undefined;
     }, {
-        updated_at?: string | undefined;
+        alias: string;
+        capacity: number;
+        channel_count: number;
+        color: string;
+        features: {
+            bit: number;
+            is_known: boolean;
+            is_required: boolean;
+            type?: string | undefined;
+        }[];
+        sockets: {
+            type: string;
+            socket: string;
+        }[];
         channels?: {
-            updated_at?: string | undefined;
             id: string;
             capacity: number;
             policies: {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -162,34 +175,34 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }[];
             transaction_id: string;
             transaction_vout: number;
+            updated_at?: string | undefined;
         }[] | undefined;
-        alias: string;
-        capacity: number;
-        channel_count: number;
-        color: string;
-        features: {
-            type?: string | undefined;
-            bit: number;
-            is_known: boolean;
-            is_required: boolean;
-        }[];
-        sockets: {
-            type: string;
-            socket: string;
-        }[];
+        updated_at?: string | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     node: {
-        updated_at?: string | undefined;
+        alias: string;
+        capacity: number;
+        channel_count: number;
+        color: string;
+        features: {
+            bit: number;
+            is_known: boolean;
+            is_required: boolean;
+            type?: string | undefined;
+        }[];
+        sockets: {
+            type: string;
+            socket: string;
+        }[];
         channels?: {
-            updated_at?: string | undefined;
             id: string;
             capacity: number;
             policies: {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -197,34 +210,34 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }[];
             transaction_id: string;
             transaction_vout: number;
+            updated_at?: string | undefined;
         }[] | undefined;
-        alias: string;
-        capacity: number;
-        channel_count: number;
-        color: string;
-        features: {
-            type?: string | undefined;
-            bit: number;
-            is_known: boolean;
-            is_required: boolean;
-        }[];
-        sockets: {
-            type: string;
-            socket: string;
-        }[];
+        updated_at?: string | undefined;
     };
 }, {
     node: {
-        updated_at?: string | undefined;
+        alias: string;
+        capacity: number;
+        channel_count: number;
+        color: string;
+        features: {
+            bit: number;
+            is_known: boolean;
+            is_required: boolean;
+            type?: string | undefined;
+        }[];
+        sockets: {
+            type: string;
+            socket: string;
+        }[];
         channels?: {
-            updated_at?: string | undefined;
             id: string;
             capacity: number;
             policies: {
+                public_key: string;
                 base_fee_mtokens?: string | undefined;
                 cltv_delta?: number | undefined;
                 fee_rate?: number | undefined;
@@ -232,25 +245,12 @@ declare const getNodeInfoResponseSchema: z.ZodObject<{
                 max_htlc_mtokens?: string | undefined;
                 min_htlc_mtokens?: string | undefined;
                 updated_at?: string | undefined;
-                public_key: string;
             }[];
             transaction_id: string;
             transaction_vout: number;
+            updated_at?: string | undefined;
         }[] | undefined;
-        alias: string;
-        capacity: number;
-        channel_count: number;
-        color: string;
-        features: {
-            type?: string | undefined;
-            bit: number;
-            is_known: boolean;
-            is_required: boolean;
-        }[];
-        sockets: {
-            type: string;
-            socket: string;
-        }[];
+        updated_at?: string | undefined;
     };
 }>;
 export type getNodeInfoResponseType = z.infer<typeof getNodeInfoResponseSchema>;

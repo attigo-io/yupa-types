@@ -192,25 +192,25 @@ declare const createNodeInvoiceSchema: z.ZodObject<{
     secret: z.ZodString;
     tokens: z.ZodOptional<z.ZodNumber>;
 }, "strip", z.ZodTypeAny, {
+    id: string;
+    created_at: string;
+    request: string;
+    secret: string;
     chain_address?: string | undefined;
     description?: string | undefined;
     mtokens?: string | undefined;
     payment?: string | undefined;
     tokens?: number | undefined;
-    id: string;
-    created_at: string;
-    request: string;
-    secret: string;
 }, {
+    id: string;
+    created_at: string;
+    request: string;
+    secret: string;
     chain_address?: string | undefined;
     description?: string | undefined;
     mtokens?: string | undefined;
     payment?: string | undefined;
     tokens?: number | undefined;
-    id: string;
-    created_at: string;
-    request: string;
-    secret: string;
 }>;
 export type createNodeInvoiceType = z.infer<typeof createNodeInvoiceSchema>;
 declare const createNodeInvoiceResponseSchema: z.ZodObject<{
@@ -225,49 +225,49 @@ declare const createNodeInvoiceResponseSchema: z.ZodObject<{
         secret: z.ZodString;
         tokens: z.ZodOptional<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
+        id: string;
+        created_at: string;
+        request: string;
+        secret: string;
         chain_address?: string | undefined;
         description?: string | undefined;
         mtokens?: string | undefined;
         payment?: string | undefined;
         tokens?: number | undefined;
-        id: string;
-        created_at: string;
-        request: string;
-        secret: string;
     }, {
+        id: string;
+        created_at: string;
+        request: string;
+        secret: string;
         chain_address?: string | undefined;
         description?: string | undefined;
         mtokens?: string | undefined;
         payment?: string | undefined;
         tokens?: number | undefined;
-        id: string;
-        created_at: string;
-        request: string;
-        secret: string;
     }>;
 }, "strip", z.ZodTypeAny, {
     invoice: {
+        id: string;
+        created_at: string;
+        request: string;
+        secret: string;
         chain_address?: string | undefined;
         description?: string | undefined;
         mtokens?: string | undefined;
         payment?: string | undefined;
         tokens?: number | undefined;
-        id: string;
-        created_at: string;
-        request: string;
-        secret: string;
     };
 }, {
     invoice: {
+        id: string;
+        created_at: string;
+        request: string;
+        secret: string;
         chain_address?: string | undefined;
         description?: string | undefined;
         mtokens?: string | undefined;
         payment?: string | undefined;
         tokens?: number | undefined;
-        id: string;
-        created_at: string;
-        request: string;
-        secret: string;
     };
 }>;
 export type createNodeInvoiceResponseType = z.infer<typeof createNodeInvoiceResponseSchema>;

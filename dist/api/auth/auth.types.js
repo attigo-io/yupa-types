@@ -30,6 +30,7 @@ const getMeResponseSchema = zod_1.z.object({
         is_authy_tfa: zod_1.z.boolean().optional().nullable(),
         name: zod_1.z.string(),
         is_email_verified: zod_1.z.boolean(),
+        is_banned: zod_1.z.boolean(),
     }),
 });
 const postRegisterResponseSchema = zod_1.z.object({

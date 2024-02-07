@@ -551,13 +551,12 @@ export declare const boltCardRefundSchema: z.ZodObject<{
 }>;
 export type boltCardRefundType = z.infer<typeof boltCardRefundSchema>;
 export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
-    refunds: z.ZodArray<z.ZodObject<z.extendShape<{
+    refunds: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
+        created_at: z.ZodDate;
+        payment_id: z.ZodNullable<z.ZodString>;
         hit_id: z.ZodString;
         refund_amount: z.ZodBigInt;
-        payment_id: z.ZodNullable<z.ZodString>;
-        created_at: z.ZodDate;
-    }, {
         api_payment: z.ZodNullable<z.ZodObject<{
             checking_id: z.ZodString;
             amount: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodString]>, z.ZodBigInt]>;
@@ -583,7 +582,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -600,7 +599,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -610,7 +609,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             yupa_fee: number;
             tpos_id: string | null;
         }>>;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         id: string;
         created_at: Date;
         payment_id: string | null;
@@ -624,7 +623,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -648,7 +647,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -674,7 +673,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -700,7 +699,7 @@ export declare const getBoltCardRefundsUserReponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -894,19 +893,18 @@ export declare const getBoltCardUserRouteResponse: z.ZodObject<{
 }>;
 export type getBoltCardUserRouteResponseType = z.infer<typeof getBoltCardUserRouteResponse>;
 export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
-    hits: z.ZodArray<z.ZodObject<z.extendShape<{
+    hits: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
+        amount: z.ZodBigInt;
+        is_paid: z.ZodBoolean;
+        created_at: z.ZodDate;
         card_id: z.ZodString;
         ip: z.ZodString;
         is_triggered: z.ZodBoolean;
-        is_paid: z.ZodBoolean;
         user_agent: z.ZodString;
         olc_ctr: z.ZodNumber;
         new_ctr: z.ZodNumber;
-        amount: z.ZodBigInt;
         payment_id: z.ZodNullable<z.ZodString>;
-        created_at: z.ZodDate;
-    }, {
         api_payment: z.ZodNullable<z.ZodObject<{
             checking_id: z.ZodString;
             amount: z.ZodUnion<[z.ZodUnion<[z.ZodNumber, z.ZodString]>, z.ZodBigInt]>;
@@ -932,7 +930,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -949,7 +947,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -959,7 +957,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             yupa_fee: number;
             tpos_id: string | null;
         }>>;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         id: string;
         amount: bigint;
         is_paid: boolean;
@@ -979,7 +977,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -1009,7 +1007,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -1041,7 +1039,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;
@@ -1073,7 +1071,7 @@ export declare const getBoltCardHitsUserResponseSchema: z.ZodObject<{
             checking_id: string;
             wallet: string;
             pending: boolean;
-            time: string | Date;
+            time: (string | Date) & (string | Date | undefined);
             hash: string | null;
             preimage: string | null;
             bolt11: string | null;

@@ -93,7 +93,7 @@ declare const getDahboardSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -107,7 +107,7 @@ declare const getDahboardSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -142,7 +142,7 @@ declare const getDahboardSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -169,7 +169,7 @@ declare const getDahboardSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;

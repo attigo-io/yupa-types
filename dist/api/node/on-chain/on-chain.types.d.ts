@@ -118,12 +118,6 @@ export declare const onChainTransactionSchema: z.ZodObject<{
     tokens: z.ZodNumber;
     transaction: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    fee?: number | undefined;
-    description?: string | undefined;
-    transaction?: string | undefined;
-    block_id?: string | undefined;
-    confirmation_count?: number | undefined;
-    confirmation_height?: number | undefined;
     id: string;
     created_at: string;
     tokens: number;
@@ -135,13 +129,13 @@ export declare const onChainTransactionSchema: z.ZodObject<{
     }[];
     is_outgoing: boolean;
     output_addresses: string[];
+    block_id?: string | undefined;
+    confirmation_count?: number | undefined;
+    confirmation_height?: number | undefined;
+    description?: string | undefined;
+    fee?: number | undefined;
+    transaction?: string | undefined;
 }, {
-    fee?: number | undefined;
-    description?: string | undefined;
-    transaction?: string | undefined;
-    block_id?: string | undefined;
-    confirmation_count?: number | undefined;
-    confirmation_height?: number | undefined;
     id: string;
     created_at: string;
     tokens: number;
@@ -153,6 +147,12 @@ export declare const onChainTransactionSchema: z.ZodObject<{
     }[];
     is_outgoing: boolean;
     output_addresses: string[];
+    block_id?: string | undefined;
+    confirmation_count?: number | undefined;
+    confirmation_height?: number | undefined;
+    description?: string | undefined;
+    fee?: number | undefined;
+    transaction?: string | undefined;
 }>;
 export type OnChainTransactionsype = z.infer<typeof onChainTransactionSchema>;
 export declare const getOnChainTransactionsResponseSchema: z.ZodObject<{
@@ -183,12 +183,6 @@ export declare const getOnChainTransactionsResponseSchema: z.ZodObject<{
         tokens: z.ZodNumber;
         transaction: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        fee?: number | undefined;
-        description?: string | undefined;
-        transaction?: string | undefined;
-        block_id?: string | undefined;
-        confirmation_count?: number | undefined;
-        confirmation_height?: number | undefined;
         id: string;
         created_at: string;
         tokens: number;
@@ -200,13 +194,13 @@ export declare const getOnChainTransactionsResponseSchema: z.ZodObject<{
         }[];
         is_outgoing: boolean;
         output_addresses: string[];
+        block_id?: string | undefined;
+        confirmation_count?: number | undefined;
+        confirmation_height?: number | undefined;
+        description?: string | undefined;
+        fee?: number | undefined;
+        transaction?: string | undefined;
     }, {
-        fee?: number | undefined;
-        description?: string | undefined;
-        transaction?: string | undefined;
-        block_id?: string | undefined;
-        confirmation_count?: number | undefined;
-        confirmation_height?: number | undefined;
         id: string;
         created_at: string;
         tokens: number;
@@ -218,15 +212,15 @@ export declare const getOnChainTransactionsResponseSchema: z.ZodObject<{
         }[];
         is_outgoing: boolean;
         output_addresses: string[];
+        block_id?: string | undefined;
+        confirmation_count?: number | undefined;
+        confirmation_height?: number | undefined;
+        description?: string | undefined;
+        fee?: number | undefined;
+        transaction?: string | undefined;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     transactions: {
-        fee?: number | undefined;
-        description?: string | undefined;
-        transaction?: string | undefined;
-        block_id?: string | undefined;
-        confirmation_count?: number | undefined;
-        confirmation_height?: number | undefined;
         id: string;
         created_at: string;
         tokens: number;
@@ -238,15 +232,15 @@ export declare const getOnChainTransactionsResponseSchema: z.ZodObject<{
         }[];
         is_outgoing: boolean;
         output_addresses: string[];
+        block_id?: string | undefined;
+        confirmation_count?: number | undefined;
+        confirmation_height?: number | undefined;
+        description?: string | undefined;
+        fee?: number | undefined;
+        transaction?: string | undefined;
     }[];
 }, {
     transactions: {
-        fee?: number | undefined;
-        description?: string | undefined;
-        transaction?: string | undefined;
-        block_id?: string | undefined;
-        confirmation_count?: number | undefined;
-        confirmation_height?: number | undefined;
         id: string;
         created_at: string;
         tokens: number;
@@ -258,6 +252,12 @@ export declare const getOnChainTransactionsResponseSchema: z.ZodObject<{
         }[];
         is_outgoing: boolean;
         output_addresses: string[];
+        block_id?: string | undefined;
+        confirmation_count?: number | undefined;
+        confirmation_height?: number | undefined;
+        description?: string | undefined;
+        fee?: number | undefined;
+        transaction?: string | undefined;
     }[];
 }>;
 export type GetOnChainTransactionsResponseType = z.infer<typeof getOnChainTransactionsResponseSchema>;

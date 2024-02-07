@@ -60,6 +60,7 @@ declare const getNodeBalanceResponseSchema: z.ZodObject<{
         unsettled_balance_mtokens?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
+    tottalBalance: number;
     chaineBalance?: number | undefined;
     chanellBalance?: {
         channel_balance?: number | undefined;
@@ -71,8 +72,8 @@ declare const getNodeBalanceResponseSchema: z.ZodObject<{
         unsettled_balance?: number | undefined;
         unsettled_balance_mtokens?: string | undefined;
     } | undefined;
-    tottalBalance: number;
 }, {
+    tottalBalance: number;
     chaineBalance?: number | undefined;
     chanellBalance?: {
         channel_balance?: number | undefined;
@@ -84,7 +85,6 @@ declare const getNodeBalanceResponseSchema: z.ZodObject<{
         unsettled_balance?: number | undefined;
         unsettled_balance_mtokens?: string | undefined;
     } | undefined;
-    tottalBalance: number;
 }>;
 export type getNodeBalanceResponseType = z.infer<typeof getNodeBalanceResponseSchema>;
 declare const getNodeOnChaineBallanceResponseSchema: z.ZodObject<{

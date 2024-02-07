@@ -24,7 +24,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     checking_id: string;
     wallet: string;
     pending: boolean;
-    time: string | Date;
+    time: (string | Date) & (string | Date | undefined);
     hash: string | null;
     preimage: string | null;
     bolt11: string | null;
@@ -41,7 +41,7 @@ export declare const yupaApiPaymentSchema: z.ZodObject<{
     checking_id: string;
     wallet: string;
     pending: boolean;
-    time: string | Date;
+    time: (string | Date) & (string | Date | undefined);
     hash: string | null;
     preimage: string | null;
     bolt11: string | null;
@@ -77,7 +77,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -94,7 +94,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -113,7 +113,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -132,7 +132,7 @@ export declare const getYupaPaymentsForWaleltResponseSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -202,27 +202,27 @@ export declare const getYupaInvoiceStatusResponseSchema: z.ZodObject<{
         failed: z.ZodOptional<z.ZodBoolean>;
         failureReason: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        pending?: boolean | undefined;
         paid?: boolean | undefined;
+        pending?: boolean | undefined;
         failed?: boolean | undefined;
         failureReason?: string | undefined;
     }, {
-        pending?: boolean | undefined;
         paid?: boolean | undefined;
+        pending?: boolean | undefined;
         failed?: boolean | undefined;
         failureReason?: string | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     status: {
-        pending?: boolean | undefined;
         paid?: boolean | undefined;
+        pending?: boolean | undefined;
         failed?: boolean | undefined;
         failureReason?: string | undefined;
     };
 }, {
     status: {
-        pending?: boolean | undefined;
         paid?: boolean | undefined;
+        pending?: boolean | undefined;
         failed?: boolean | undefined;
         failureReason?: string | undefined;
     };

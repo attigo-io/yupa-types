@@ -141,7 +141,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -158,7 +158,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -177,7 +177,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -196,7 +196,7 @@ export declare const getPosTodayInvoicesSchema: z.ZodObject<{
         checking_id: string;
         wallet: string;
         pending: boolean;
-        time: string | Date;
+        time: (string | Date) & (string | Date | undefined);
         hash: string | null;
         preimage: string | null;
         bolt11: string | null;
@@ -213,21 +213,21 @@ export declare const createPosInvoiceResponseSchema: z.ZodObject<{
         payment_hash: z.ZodOptional<z.ZodString>;
         payment_request: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        payment_hash?: string | undefined;
         payment_request: string;
+        payment_hash?: string | undefined;
     }, {
-        payment_hash?: string | undefined;
         payment_request: string;
+        payment_hash?: string | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     invoice: {
-        payment_hash?: string | undefined;
         payment_request: string;
+        payment_hash?: string | undefined;
     };
 }, {
     invoice: {
-        payment_hash?: string | undefined;
         payment_request: string;
+        payment_hash?: string | undefined;
     };
 }>;
 export type createPosInvoiceResponseType = z.infer<typeof createPosInvoiceResponseSchema>;
